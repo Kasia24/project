@@ -1,0 +1,34 @@
+.body-style {
+  background-color: rgba(17, 17, 17, 1);
+  width: 320px;
+}
+.text-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+.paragraph-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: right;
+  color: rgba(248, 119, 25, 1);
+}
+#movies-list {
+  display: flex;
+  flex-direction: row;
+  gap: 109px;
+}
+#movies-card {
+  width: 280px;
+  height: 406px;
+  background-color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+}
