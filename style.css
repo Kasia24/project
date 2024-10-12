@@ -130,8 +130,6 @@
   .movie-container {
     display: grid;
     opacity: 0px;
-    gap: 16px;
-    margin: 32px;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     width: 768px;
     height: 325px;
