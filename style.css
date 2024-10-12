@@ -32,3 +32,13 @@
     rgba(0, 0, 0, 0.9) 92.16%
   );
 }
+@media (min-width: 768px) {
+  .body-style {
+    width: 100vh;
+  }
+}
+@media (min-width: 768px) {
+  #movies-list {
+    gap: 447px;
+  }
+}
