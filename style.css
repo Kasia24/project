@@ -39,8 +39,8 @@
   margin-right: 20px;
 }
 .movies-card img {
-  width: 280px;
-  height: 406px;
+  width: 100%;
+  height: auto;
 }
 .movies-grid {
   display: flex;
