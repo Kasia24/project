@@ -1,32 +1,50 @@
 const apiKey = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw klucz API
 const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
 
-fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    // Call a function to render movies on the screen
-    renderMovies(data.results);
-  })
-  .catch((error) => console.error("Error fetching movies:", error));
+// Funkcja pobierająca popularne filmy
+async function fetchMovies() {
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  displayMovies(data.results);
+}
 
-function renderMovies(movies) {
-  const container = document.getElementById("movies-container"); // A div with id movies-container
+// Funkcja wyświetlająca filmy
+function displayMovies(movies) {
+  const movieContainer = document.getElementById("movies");
+  movieContainer.innerHTML = ""; // Czyszczenie zawartości
 
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-card");
 
     movieCard.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500${
-              movie.poster_path
-            }" alt="${movie.title}">
-                    <div class="movie-title">${movie.title}</div>
-                    <div class="movie-info">Gatunek | ${
-                      movie.release_date.split("-")[0]
-                    }</div>
-                    <div class="stars">${getStars(movie.vote_average)}</div>
-                `;
+          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
+      movie.title
+    }">
+          <div class="movie-title">${movie.title}</div>
+          <div class="movie-info">Gatunek | ${
+            movie.release_date.split("-")[0]
+          }</div>
+          <div class="stars">${getStars(movie.vote_average)}</div>
+      `;
 
-    container.appendChild(movieCard);
+    movieContainer.appendChild(movieCard);
   });
 }
+
+// Funkcja generująca gwiazdki na podstawie oceny
+function getStars(vote) {
+  const fullStars = Math.floor(vote / 2);
+  let stars = "";
+  for (let i = 0; i < 5; i++) {
+    if (i < fullStars) {
+      stars += "&#9733;"; // Pełna gwiazdka
+    } else {
+      stars += "&#9734;"; // Pusta gwiazdka
+    }
+  }
+  return stars;
+}
+
+// Wywołanie funkcji
+fetchMovies();
