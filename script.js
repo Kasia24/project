@@ -21,11 +21,12 @@ function renderMovies(movies) {
               movie.poster_path
             }" alt="${movie.title}">
             <h3>${movie.title}</h3>
-            <p>${movie.genre_ids.slice(0, 2).join(", ")} | ${
-      movie.release_date.split("-")[0]
-    }</p>
-            <div class="rating">⭐⭐⭐⭐⭐</div>
-        `;
+            <div class="movie-info">Gatunek | ${
+              movie.release_date.split("-")[0]
+            }</div>
+                    <div class="stars">${getStars(movie.vote_average)}</div>
+                    
+ `;
 
     container.appendChild(movieCard);
   });
