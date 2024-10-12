@@ -20,13 +20,12 @@ function renderMovies(movies) {
             <img src="https://image.tmdb.org/t/p/w500${
               movie.poster_path
             }" alt="${movie.title}">
-            <h3>${movie.title}</h3>
-            <div class="movie-info">Gatunek | ${
-              movie.release_date.split("-")[0]
-            }</div>
+                    <div class="movie-title">${movie.title}</div>
+                    <div class="movie-info">Gatunek | ${
+                      movie.release_date.split("-")[0]
+                    }</div>
                     <div class="stars">${getStars(movie.vote_average)}</div>
-                    
- `;
+                `;
 
     container.appendChild(movieCard);
   });
