@@ -17,6 +17,7 @@
   line-height: 18.75px;
   text-align: right;
   color: rgba(248, 119, 25, 1);
+  margin-right: 20px;
 }
 #movies-list {
   display: flex;
@@ -58,6 +59,7 @@
     font-weight: 500;
     line-height: 28.13px;
     text-align: left;
+    margin-right: 32px;
   }
 }
 @media (min-width: 768px) {
