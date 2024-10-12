@@ -82,7 +82,7 @@
 @media (min-width: 768px) {
   .movies-grid {
     display: flex;
-    flex-direction: row;
+    flex-direction: grid;
     gap: 16px;
   }
 }
