@@ -69,7 +69,12 @@
     flex-direction: row;
   }
 }
-
+@media (min-width: 768px) {
+  .movies-card img {
+    width: 224px;
+    height: 325px;
+  }
+}
 @media (min-width: 1280px) {
   .text-style {
     font-size: 28px;
