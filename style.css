@@ -27,7 +27,7 @@
   margin-right: 20px;
   justify-content: space-between;
 }
-#movies-card {
+.movies-card {
   width: 280px;
   height: 406px;
   background-color: linear-gradient(
@@ -43,8 +43,15 @@
   height: 406px;
 }
 .movies-grid {
-  display: flex;
-  flex-direction: column;
+  width: 280px;
+  height: 406px;
+  background-color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 @media (min-width: 768px) {
