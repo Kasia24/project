@@ -25,6 +25,7 @@
   flex-direction: row;
   margin-left: 20px;
   margin-right: 20px;
+  justify-content: space-between;
 }
 #movies-card {
   width: 280px;
