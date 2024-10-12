@@ -1,47 +1,52 @@
 const apiKey = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw klucz API
-const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
+const BASE_URL = "https://api.themoviedb.org/3";
+const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"; // URL dla pobierania plakatów filmów
+const moviesContainer = document.getElementById("movies");
 
-// Funkcja pobierająca popularne filmy
-async function fetchMovies() {
-  const response = await fetch(API_URL);
-  const data = await response.json();
-  displayMovies(data.results);
+// Funkcja pobierająca trendy filmowe na podstawie danych z TMDB API
+async function getWeeklyTrends() {
+  const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=pl-PL`;
+
+  try {
+    const response = await axios.get(url);
+    const movies = response.data.results;
+    displayMovies(movies); // Wyświetl filmy
+  } catch (error) {
+    console.error("Błąd przy pobieraniu filmów:", error);
+  }
 }
 
-// Funkcja wyświetlająca filmy
+// Funkcja wyświetlająca filmy w sekcji HTML
 function displayMovies(movies) {
-  const movieContainer = document.getElementById("movies");
-  movieContainer.innerHTML = ""; // Czyszczenie zawartości
+  moviesContainer.innerHTML = ""; // Wyczyść poprzednie filmy
 
   movies.forEach((movie) => {
-    const movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
+    const movieElement = document.createElement("div");
+    movieElement.classList.add("movie");
 
-    movieCard.innerHTML = `
-              <img src="https://image.tmdb.org/t/p/w500${
-                movie.poster_path
-              }" alt="${movie.title}">
-              <div class="movie-title">${movie.title}</div>
-              <div class="movie-info">Gatunek | ${
-                movie.release_date.split("-")[0]
-              }</div>
-              <div class="stars">${getStars(movie.vote_average)}</div>
-          `;
+    // Sprawdzanie czy plakat filmu istnieje
+    const moviePoster = movie.poster_path
+      ? `${IMG_BASE_URL}${movie.poster_path}`
+      : "no-image.jpg";
 
-    movieContainer.appendChild(movieCard);
+    // Pobieranie roku premiery
+    const releaseYear = movie.release_date
+      ? movie.release_date.split("-")[0]
+      : "Brak danych";
+
+    // HTML dla pojedynczej karty filmu
+    const movieHTML = `
+      <img src="${moviePoster}" alt="${movie.title}">
+      <h2>${movie.title} (${releaseYear})</h2>
+      <p>${
+        movie.overview ? movie.overview.slice(0, 100) + "..." : "Brak opisu"
+      }</p>
+    `;
+
+    movieElement.innerHTML = movieHTML;
+    moviesContainer.appendChild(movieElement);
   });
 }
 
-// Funkcja generująca gwiazdki na podstawie oceny
-function getStars(vote) {
-  const fullStars = Math.floor(vote / 2);
-  let stars = "";
-  for (let i = 0; i < 5; i++) {
-    if (i < fullStars) {
-      stars += "&#9733;"; // Pełna gwiazdka
-    } else {
-      stars += "&#9734;"; // Pusta gwiazdka
-    }
-  }
-  return stars;
-}
+// Wywołaj funkcję do pobrania i wyświetlenia trendów tygodniowych
+getWeeklyTrends();
