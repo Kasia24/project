@@ -170,5 +170,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     width: 1215px;
+    height: 574px;
   }
 }
