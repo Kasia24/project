@@ -30,6 +30,8 @@
   flex-direction: row;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 24px;
+  margin-top: 24px;
   justify-content: space-between;
 }
 .movie-card {
@@ -44,7 +46,7 @@
   border-radius: 5px 0px 0px 0px;
   opacity: 0px;
   overflow: hidden;
-  position: relative;
+  //position: relative;
 }
 .movie-card img {
   width: 280px;
@@ -170,8 +172,8 @@
     height: 574px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .movie-container {
-    max-width: 1280px;
+    width: 1280px;
   }
 }
