@@ -60,3 +60,10 @@
     text-align: left;
   }
 }
+@media (min-width: 768px) {
+  #movies-card {
+    width: 224px;
+    height: 325px;
+    flex-direction: row;
+  }
+}
