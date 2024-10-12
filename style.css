@@ -23,7 +23,8 @@
 #movies-list {
   display: flex;
   flex-direction: row;
-  gap: 109px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 #movies-card {
   width: 280px;
@@ -36,14 +37,11 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-@media (min-width: 768px) {
-  .body-style {
-    width: 100vh;
-  }
-}
+
 @media (min-width: 768px) {
   #movies-list {
-    gap: 447px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 @media (min-width: 768px) {
