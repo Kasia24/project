@@ -171,8 +171,11 @@
     height: 574px;
   }
 }
-@media only screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
   .movie-container {
     width: 1280px;
+    margin-right: 32px;
+    margin-left: 32px;
+    gap: 16px;
   }
 }
