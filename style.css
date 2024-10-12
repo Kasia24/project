@@ -88,7 +88,7 @@
     opacity: 0px;
     gap: 16px;
     margin: 32px;
-    min-width: 768px;
+    max-width: 768px;
   }
 }
 @media (min-width: 1280px) {
@@ -115,5 +115,10 @@
   .movies-card img {
     width: 395px;
     height: 574px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .movies-grid {
+    max-width: 1280px;
   }
 }
