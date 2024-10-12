@@ -27,7 +27,7 @@
   margin-right: 20px;
   justify-content: space-between;
 }
-.movies-card {
+.movie-card {
   width: 280px;
   height: 406px;
   background-color: linear-gradient(
@@ -37,12 +37,12 @@
   );
   margin: 0px;
 }
-.movies-card img {
+.movie-card img {
   width: 280px;
   height: 406px;
   overflow: hidden;
 }
-.movies-card h3 {
+.movie-card h3 {
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
@@ -50,7 +50,7 @@
   text-align: left;
   color: rgba(255, 255, 255, 1);
 }
-.movies-card p {
+.movie-card p {
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
@@ -63,7 +63,7 @@
   margin: 12px 0;
 }
 
-.movies-grid {
+.movie-container {
   display: flex;
   flex-wrap: wrap;
   width: 280px;
@@ -100,7 +100,7 @@
   }
 }
 @media (min-width: 768px) {
-  #movies-card {
+  .movie-card {
     width: 224px;
     height: 325px;
     flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
@@ -108,13 +108,13 @@
 }
 
 @media (min-width: 768px) {
-  .movies-card img {
+  .movie-card img {
     width: 224px;
     height: 325px;
   }
 }
 @media (min-width: 768px) {
-  .movies-grid {
+  .movie-container {
     display: grid;
     flex-direction: row;
     align-items: center;
@@ -145,19 +145,19 @@
   }
 }
 @media (min-width: 1280px) {
-  #movies-card {
+  .movie-card {
     width: 395px;
     height: 574px;
   }
 }
 @media (min-width: 1280px) {
-  .movies-card img {
+  .movie-card img {
     width: 395px;
     height: 574px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .movies-grid {
+  .movie-container {
     max-width: 1280px;
   }
 }
