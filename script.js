@@ -22,7 +22,7 @@ function displayMovies(movies) {
               movie.poster_path
             }" alt="${movie.title}">
             <div class="movie-title">${movie.title}</div>
-            <div class="movie-info">Gatunek | ${
+            <div class="movie-info">Drama | ${
               movie.release_date.split("-")[0]
             }</div>
             <div class="stars">${getStars(movie.vote_average)}</div>
