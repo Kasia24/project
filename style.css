@@ -51,6 +51,7 @@
   );
   margin-right: 20px;
   margin-left: 20px;
+  justify-content: space-between;
   gap: 16px;
 }
 
@@ -88,7 +89,7 @@
 }
 @media (min-width: 768px) {
   .movies-grid {
-    display: flex;
+    display: grid;
     flex-direction: row;
     align-items: center;
     justify-content: center;
