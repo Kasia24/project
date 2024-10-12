@@ -36,11 +36,11 @@
     rgba(0, 0, 0, 0.9) 92.16%
   );
   margin: 0px;
+  flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
 }
 .movies-card img {
   width: 280px;
   height: 406px;
-  flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
 }
 .movies-grid {
   display: flex;
@@ -56,6 +56,7 @@
   margin-left: 20px;
   justify-content: space-between;
   gap: 16px;
+  flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
 }
 
 @media (min-width: 768px) {
