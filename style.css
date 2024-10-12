@@ -40,6 +40,7 @@
 .movies-card img {
   width: 280px;
   height: 406px;
+  flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
 }
 .movies-grid {
   display: flex;
