@@ -14,7 +14,7 @@ function renderMovies(movies) {
 
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
-    movieCard.classList.add("movies-card");
+    movieCard.classList.add("movie-card");
 
     movieCard.innerHTML = `
             <img src="https://image.tmdb.org/t/p/w500${
