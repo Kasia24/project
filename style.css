@@ -41,10 +41,7 @@
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
-  margin: 0px;
   border-radius: 5px 5px 5px 5px;
-  opacity: 0px;
-  overflow: hidden;
 }
 .movie-card img {
   width: 280px;
@@ -58,6 +55,7 @@
   line-height: 20px;
   text-align: left;
   color: rgba(255, 255, 255, 1);
+  overflow: hidden;
 }
 .movie-info {
   font-family: Roboto;
