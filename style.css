@@ -82,9 +82,10 @@
   #movies-card {
     width: 224px;
     height: 325px;
-    flex-direction: row;
+    flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
   }
 }
+
 @media (min-width: 768px) {
   .movies-card img {
     width: 224px;
@@ -102,8 +103,10 @@
     margin: 32px;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width: 768px;
+    flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
   }
 }
+
 @media (min-width: 1280px) {
   .text-style {
     font-size: 28px;
