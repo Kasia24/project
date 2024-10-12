@@ -82,8 +82,12 @@
 @media (min-width: 768px) {
   .movies-grid {
     display: flex;
-    flex-direction: grid;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 0px;
     gap: 16px;
+    margin: 32px;
   }
 }
 @media (min-width: 1280px) {
