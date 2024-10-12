@@ -10,7 +10,7 @@ fetch(url)
   .catch((error) => console.error("Error fetching movies:", error));
 
 function renderMovies(movies) {
-  const container = document.getElementById("movies-container"); // A div with id movies-container
+  const container = document.getElementById("movie-container"); // A div with id movies-container
 
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
