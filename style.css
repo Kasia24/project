@@ -42,7 +42,7 @@
   height: 406px;
   overflow: hidden;
 }
-.movie-card h3 {
+.movie-title {
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
@@ -50,7 +50,7 @@
   text-align: left;
   color: rgba(255, 255, 255, 1);
 }
-.movie-card p {
+.movie-info {
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
