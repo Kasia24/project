@@ -177,5 +177,6 @@
     margin-right: 32px;
     margin-left: 32px;
     gap: 16px;
+    display: grid;
   }
 }
