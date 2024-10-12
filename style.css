@@ -119,6 +119,7 @@
     width: 224px;
     height: 325px;
     flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
+    gap: 16px;
   }
 }
 
@@ -131,15 +132,10 @@
 @media (min-width: 768px) {
   .movie-container {
     display: grid;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     opacity: 0px;
     gap: 16px;
     margin: 32px;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
-    max-width: 768px;
-    flex: 1 1 calc(33.333% - 32px); /* 3 kolumny, z marginesem */
     width: 768px;
     height: 325px;
   }
