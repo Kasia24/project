@@ -115,8 +115,6 @@
   .movie-card {
     width: 224px;
     height: 325px;
-    flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
-    gap: 16px;
   }
 }
 
@@ -164,10 +162,10 @@
 }
 @media (min-width: 1280px) {
   .movie-container {
-    width: 1280px;
     margin-right: 32px;
     margin-left: 32px;
     gap: 16px;
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
   }
 }
