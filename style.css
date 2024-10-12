@@ -42,3 +42,21 @@
     gap: 447px;
   }
 }
+@media (min-width: 768px) {
+  .text-style {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.13px;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph-style {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.13px;
+    text-align: left;
+  }
+}
