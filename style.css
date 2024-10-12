@@ -96,6 +96,7 @@
     opacity: 0px;
     gap: 16px;
     margin: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width: 768px;
   }
 }
