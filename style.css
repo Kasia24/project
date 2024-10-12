@@ -166,8 +166,9 @@
   .movie-container {
     margin-right: 32px;
     margin-left: 32px;
-    gap: 16px;
+    gap: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    width: 1215px;
   }
 }
