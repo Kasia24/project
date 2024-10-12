@@ -130,7 +130,7 @@
     margin: 32px;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     max-width: 768px;
-    flex: 1 1 calc(33.333% - 20px); /* 3 kolumny, z marginesem */
+    flex: 1 1 calc(33.333% - 32px); /* 3 kolumny, z marginesem */
     width: 768px;
     height: 325px;
   }
