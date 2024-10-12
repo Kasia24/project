@@ -41,6 +41,15 @@
   width: 280px;
   height: 406px;
 }
+.movie-card h3 {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
 .movies-grid {
   display: flex;
   flex-wrap: wrap;
