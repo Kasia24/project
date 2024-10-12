@@ -44,7 +44,7 @@
 }
 .movies-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -77,6 +77,13 @@
   .movies-card img {
     width: 224px;
     height: 325px;
+  }
+}
+@media (min-width: 768px) {
+  .movies-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
   }
 }
 @media (min-width: 1280px) {
