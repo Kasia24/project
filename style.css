@@ -67,21 +67,21 @@
   }
 }
 
-@media (min-width: 1158px) {
+@media (min-width: 1280px) {
   .text-style {
     font-size: 28px;
     line-height: 32.81px;
     margin-left: 32px;
   }
 }
-@media (min-width: 1158px) {
+@media (min-width: 1280px) {
   .paragraph-style {
     font-size: 28px;
     line-height: 32.81px;
     margin-right: 32px;
   }
 }
-@media (min-width: 1158px) {
+@media (min-width: 1280px) {
   #movies-card {
     width: 395px;
     height: 574px;
