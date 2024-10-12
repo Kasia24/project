@@ -42,6 +42,10 @@
   width: 280px;
   height: 406px;
 }
+.movies-grid {
+  display: flex;
+  flex-direction: row;
+}
 
 @media (min-width: 768px) {
   #movies-list {
