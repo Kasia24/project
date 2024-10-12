@@ -95,3 +95,9 @@
     height: 574px;
   }
 }
+@media (min-width: 1280px) {
+  .movies-card img {
+    width: 395px;
+    height: 574px;
+  }
+}
