@@ -49,6 +49,7 @@ function getGenreNames(genreIds) {
       const genre = genres.find((g) => g.id === id);
       return genre ? genre.name : "Nieznany gatunek";
     })
+    .slice(0, 2) // Ogranicz do dwóch gatunków
     .join(", ");
 }
 
