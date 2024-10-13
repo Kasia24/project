@@ -38,15 +38,15 @@
 .movie-card {
   width: 280px;
   height: 406px;
+  border-radius: 5px 5px 5px 5px;
+  flex-basis: calc(33.333% - 24px);
+  gap: 16px;
+  position: relative;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
-  border-radius: 5px 5px 5px 5px;
-  flex-basis: calc(33.333% - 24px);
-  gap: 16px;
-  position: relative;
 }
 .movie-card img {
   width: 280px;
@@ -89,11 +89,6 @@
   flex-wrap: wrap;
   width: 280px;
   height: 406px;
-  background-color: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 63.48%,
-    rgba(0, 0, 0, 0.9) 92.16%
-  );
   margin-right: 20px;
   margin-left: 20px;
   justify-content: space-between;
