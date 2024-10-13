@@ -44,7 +44,7 @@
   );
   border-radius: 5px 5px 5px 5px;
   flex-basis: calc(33.333% - 24px);
-  position: relative;
+
   gap: 16px;
 }
 .movie-card img {
@@ -59,11 +59,6 @@
   line-height: 20px;
   text-align: left;
   color: rgba(255, 255, 255, 1);
-  overflow: hidden;
-  position: absolute;
-  top: 95%;
-  left: 43%;
-  transform: translate(-100%, -100%);
 }
 .movie-info {
   font-family: Roboto;
@@ -72,10 +67,6 @@
   line-height: 20px;
   text-align: left;
   color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 100%;
-  left: 27%;
-  transform: translate(-100%, -100%);
 }
 .stars {
   text-align: right;
