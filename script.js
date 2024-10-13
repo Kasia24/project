@@ -3,6 +3,7 @@ const API_KEY = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw swój API key tutaj
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
 let moviesList = []; // Lista przechowująca pobrane filmy
+let genres = []; // Lista przechowująca pobrane gatunki
 const moviesContainer = document.getElementById("movies");
 const loadMoreButton = document.getElementById("load-more");
 
@@ -16,6 +17,18 @@ function getMoviesPerLoad() {
   }
 }
 
+// Funkcja do pobierania gatunków z TMDb API
+function getGenres() {
+  const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=pl-PL`;
+
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      genres = data.genres;
+    })
+    .catch((error) => console.log(error));
+}
+
 // Funkcja do pobierania filmów z TMDb API
 function getMovies(page) {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pl-PL&page=${page}`;
@@ -24,9 +37,26 @@ function getMovies(page) {
     .then((response) => response.json())
     .then((data) => {
       moviesList = moviesList.concat(data.results); // Dodaj filmy do listy
-      displayMovies(); // Wyświetl pierwszy film z nowo pobranych
+      displayMovies(); // Wyświetl filmy z nowo pobranych
     })
     .catch((error) => console.log(error));
+}
+
+// Funkcja do dopasowania gatunków do filmów
+function getGenreNames(genreIds) {
+  return genreIds
+    .map((id) => {
+      const genre = genres.find((g) => g.id === id);
+      return genre ? genre.name : "Nieznany gatunek";
+    })
+    .join(", ");
+}
+
+// Funkcja do generowania gwiazdek na podstawie średniej oceny
+function getStars(vote_average) {
+  const fullStars = Math.floor(vote_average / 2); // Zamień ocenę na liczbę gwiazdek (zakładam, że skala TMDb jest 0-10)
+  const stars = "⭐".repeat(fullStars);
+  return stars;
 }
 
 // Funkcja do wyświetlania filmów
@@ -36,16 +66,21 @@ function displayMovies() {
   for (let i = 0; i < moviesPerLoad; i++) {
     if (currentMovieIndex < moviesList.length) {
       const movie = moviesList[currentMovieIndex]; // Pobierz aktualny film
+      const genreNames = getGenreNames(movie.genre_ids); // Pobierz nazwy gatunków dla filmu
+
       const movieCard = document.createElement("div");
       movieCard.classList.add("movie-card");
 
       movieCard.innerHTML = `
-              <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-              <div class="movie-info">
-                  <h2 class="movie-title">${movie.title}</h2>
-                  <p>${movie.release_date}</p>
-                                </div>
-          `;
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
+        movie.title
+      }">
+        <div class="movie-info">
+          <h2 class="movie-title">${movie.title}</h2>
+          <p>${genreNames} | ${movie.release_date.split("-")[0]}</p>
+          <div class="stars">${getStars(movie.vote_average)}</div>
+        </div>
+      `;
 
       moviesContainer.appendChild(movieCard);
       currentMovieIndex++; // Zwiększ indeks filmu
@@ -64,5 +99,5 @@ loadMoreButton.addEventListener("click", () => {
   getMovies(page);
 });
 
-// Pobranie początkowej listy filmów
-getMovies(page);
+// Najpierw pobierz listę gatunków, a potem filmy
+getGenres().then(() => getMovies(page));
