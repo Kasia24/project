@@ -51,7 +51,12 @@
 .movie-card img {
   width: 280px;
   height: 406px;
-  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
 }
 .movie-title {
   font-family: Roboto;
