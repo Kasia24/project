@@ -44,7 +44,7 @@ function displayMovies() {
               <div class="movie-info">
                   <h2 class="movie-title">${movie.title}</h2>
                   <p>${movie.release_date}</p>
-              </div>
+                                </div>
           `;
 
       moviesContainer.appendChild(movieCard);
