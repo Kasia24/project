@@ -43,7 +43,9 @@
     rgba(0, 0, 0, 0.9) 92.16%
   );
   border-radius: 5px 5px 5px 5px;
+  flex-basis: calc(33.333% - 24px);
   position: relative;
+  gap: 16px;
 }
 .movie-card img {
   width: 280px;
@@ -164,6 +166,7 @@
   .movie-card {
     width: 395px;
     height: 574px;
+    gap: 15px;
   }
 }
 @media (min-width: 1280px) {
@@ -178,7 +181,7 @@
     margin-left: 32px;
     gap: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 1215px;
     height: 574px;
   }
