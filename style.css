@@ -63,6 +63,8 @@
   text-transform: uppercase;
 }
 .movie-info {
+  display: flex;
+  flex-direction: column;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
@@ -70,10 +72,14 @@
   text-align: left;
   color: rgba(255, 255, 255, 1);
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 0%;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 .stars {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
   margin: 12px 0;
   width: 14px;
