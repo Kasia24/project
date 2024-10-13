@@ -52,10 +52,16 @@ function getGenreNames(genreIds) {
     .join(", ");
 }
 
-// Funkcja do generowania gwiazdek na podstawie średniej oceny
-function getStars(vote_average) {
-  const fullStars = Math.floor(vote_average / 2); // Zamień ocenę na liczbę gwiazdek (zakładam, że skala TMDb jest 0-10)
-  const stars = "⭐".repeat(fullStars);
+function getStars(vote) {
+  const fullStars = Math.floor(vote / 2);
+  let stars = "";
+  for (let i = 0; i < 5; i++) {
+    if (i < fullStars) {
+      stars += "&#9733;"; // Pełna gwiazdka
+    } else {
+      stars += "&#9734;"; // Pusta gwiazdka
+    }
+  }
   return stars;
 }
 

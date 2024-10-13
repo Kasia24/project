@@ -44,7 +44,7 @@
   );
   border-radius: 5px 5px 5px 5px;
   flex-basis: calc(33.333% - 24px);
-
+  position: relative;
   gap: 16px;
 }
 .movie-card img {
