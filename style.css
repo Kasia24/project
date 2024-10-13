@@ -145,6 +145,12 @@
     left: 0%;
   }
 }
+@media (min-width: 1280px) {
+  .movie-info {
+    top: 92%;
+    left: 0%;
+  }
+}
 
 @media (min-width: 1280px) {
   .text-style {
