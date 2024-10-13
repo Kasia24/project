@@ -88,6 +88,9 @@
   gap: 0px;
   opacity: 0px;
   color: rgba(248, 119, 25, 1);
+  position: absolute;
+  top: 20%;
+  left: 150%;
 }
 
 .movie-container {
@@ -148,6 +151,12 @@
   .movie-info {
     top: 86%;
     left: 0%;
+  }
+}
+@media (min-width: 768px) {
+  .stars {
+    top: 20%;
+    left: 110%;
   }
 }
 @media (min-width: 1280px) {
