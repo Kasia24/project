@@ -1,9 +1,20 @@
 const API_KEY = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw swój API key tutaj
-// script.js
 
 let page = 1;
+let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
+let moviesList = []; // Lista przechowująca pobrane filmy
 const moviesContainer = document.getElementById("movies");
 const loadMoreButton = document.getElementById("load-more");
+
+// Funkcja do pobierania liczby filmów na podstawie szerokości ekranu
+function getMoviesPerLoad() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    return 1; // Wyświetl 1 film na urządzeniach mobilnych
+  } else {
+    return 3; // Wyświetl 3 filmy na tabletach i laptopach
+  }
+}
 
 // Funkcja do pobierania filmów z TMDb API
 function getMovies(page) {
@@ -12,27 +23,39 @@ function getMovies(page) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      displayMovies(data.results);
+      moviesList = moviesList.concat(data.results); // Dodaj filmy do listy
+      displayMovies(); // Wyświetl pierwszy film z nowo pobranych
     })
     .catch((error) => console.log(error));
 }
 
-// Funkcja do wyświetlania filmów w HTML
-function displayMovies(movies) {
-  movies.forEach((movie) => {
-    const movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
+// Funkcja do wyświetlania filmów
+function displayMovies() {
+  const moviesPerLoad = getMoviesPerLoad(); // Pobierz liczbę filmów do załadowania
 
-    movieCard.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-            <div class="movie-info">
-                <h2 class="movie-title">${movie.title}</h2>
-                <p>${movie.release_date}</p>
-            </div>
-        `;
+  for (let i = 0; i < moviesPerLoad; i++) {
+    if (currentMovieIndex < moviesList.length) {
+      const movie = moviesList[currentMovieIndex]; // Pobierz aktualny film
+      const movieCard = document.createElement("div");
+      movieCard.classList.add("movie-card");
 
-    moviesContainer.appendChild(movieCard);
-  });
+      movieCard.innerHTML = `
+              <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+              <div class="movie-info">
+                  <h2 class="movie-title">${movie.title}</h2>
+                  <p>${movie.release_date}</p>
+              </div>
+          `;
+
+      moviesContainer.appendChild(movieCard);
+      currentMovieIndex++; // Zwiększ indeks filmu
+    } else {
+      // Jeśli filmy się skończą, załaduj kolejną stronę
+      page++;
+      getMovies(page);
+      break; // Zakończ pętlę, aby czekać na załadowanie nowych filmów
+    }
+  }
 }
 
 // Obsługa przycisku "Załaduj więcej"
