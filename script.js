@@ -1,6 +1,6 @@
 const API_KEY = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw swój API key tutaj
 const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pl-PL&page=1`;
-
+let page = 1;
 const loadMoreButton = document.getElementById("load-more");
 // Funkcja pobierająca popularne filmy
 async function fetchMovies() {
