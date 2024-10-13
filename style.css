@@ -159,6 +159,12 @@
   }
 }
 @media (min-width: 1280px) {
+  .stars {
+    top: 20%;
+    left: 230%;
+  }
+}
+@media (min-width: 1280px) {
   .movie-info {
     top: 92%;
     left: 0%;
