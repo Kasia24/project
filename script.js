@@ -53,8 +53,8 @@ fetchMovies();
 // Obsługa przycisku "Załaduj więcej"
 loadMoreButton.addEventListener("click", () => {
   page++;
-  getMovies(page);
+  fetchMovies(page);
 });
 
 // Pobranie początkowej listy filmów
-getMovies(page);
+fetchMovies(page);
