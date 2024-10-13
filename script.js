@@ -48,3 +48,12 @@ function getStars(vote) {
 
 // Wywołanie funkcji
 fetchMovies();
+
+// Obsługa przycisku "Załaduj więcej"
+loadMoreButton.addEventListener("click", () => {
+  page++;
+  getMovies(page);
+});
+
+// Pobranie początkowej listy filmów
+getMovies(page);
