@@ -59,6 +59,7 @@
   line-height: 20px;
   text-align: left;
   color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
 }
 .movie-info {
   font-family: Roboto;
