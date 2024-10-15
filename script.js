@@ -108,3 +108,34 @@ loadMoreButton.addEventListener("click", () => {
 
 // Najpierw pobierz listę gatunków, a potem filmy
 getGenres().then(() => getMovies(page));
+
+let moviesLoaded = false;
+
+function loadMoreMovies() {
+  if (!moviesLoaded) {
+    // Symulacja ładowania filmów (w rzeczywistości tu może być API)
+    const newMovies = [
+      { title: "Movie 4", year: 2023 },
+      { title: "Movie 5", year: 2023 },
+      { title: "Movie 6", year: 2023 },
+    ];
+
+    const movieList = document.getElementById("movies");
+
+    newMovies.forEach((movie) => {
+      const movieCard = document.createElement("div");
+      movieCard.classList.add("movie-card");
+      movieCard.innerHTML = `
+        <h3>${movie.title}</h3>
+        <p>${movie.year}</p>
+      `;
+      movieList.insertBefore(movieCard, document.getElementById("load more")); // Wstaw przed przyciskiem
+    });
+
+    // Zaznacz, że załadowano filmy, aby zapobiec wielokrotnemu ładowaniu
+    moviesLoaded = true;
+
+    // Możesz ukryć przycisk See All, jeśli nie chcesz go pokazywać po załadowaniu
+    document.getElementById("load more").style.display = "none";
+  }
+}
