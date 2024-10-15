@@ -25,6 +25,8 @@
   color: rgba(248, 119, 25, 1);
   margin-right: 20px;
   cursor: pointer;
+  border: none;
+  background-color: black;
 }
 #movies-list {
   display: flex;
