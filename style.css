@@ -165,14 +165,12 @@
 }
 @media (min-width: 768px) {
   .stars {
-    top: 20%;
-    left: 110%;
+    left: 170px;
   }
 }
 @media (min-width: 1280px) {
   .stars {
-    top: 20%;
-    left: 230%;
+    left: 330px;
   }
 }
 @media (min-width: 1280px) {
