@@ -41,7 +41,7 @@
   height: 406px;
   border-radius: 5px 5px 5px 5px;
   flex-basis: calc(33.333% - 24px);
-  gap: 16px;
+  margin-bottom: 16px;
   position: relative;
   background: linear-gradient(
     180deg,
