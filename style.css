@@ -6,6 +6,7 @@
 
 .body-style {
   background-color: rgba(17, 17, 17, 1);
+  max-width: 1216px;
 }
 .text-style {
   font-family: Roboto;
