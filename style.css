@@ -49,7 +49,7 @@
     rgba(0, 0, 0, 0.9) 92.16%
   );
 }
-.movie-card::after {
+.movie-card img::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -61,7 +61,7 @@
   );
   margin-bottom: 16px;
 }
-/*.movie-card img {
+.movie-card img {
   width: 280px;
   height: 406px;
   background: linear-gradient(
@@ -69,7 +69,7 @@
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
-}*/
+}
 .movie-title {
   font-family: Roboto;
   font-size: 12px;
