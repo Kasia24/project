@@ -100,8 +100,8 @@
   opacity: 0px;
   color: rgba(248, 119, 25, 1);
   position: absolute;
-  top: 20%;
-  left: 150%;
+  bottom: 0;
+  left: 220px;
   display: flex;
   flex-direction: row;
 }
