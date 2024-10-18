@@ -57,13 +57,6 @@
   );
   z-index: 1;
 }
-.movie-info,
-.movie-description {
-  position: absolute;
-  z-index: 2;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
 .movie-card img {
   width: 280px;
   height: 406px;
@@ -96,6 +89,7 @@
   top: 90%;
   left: 0%;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 .stars {
   margin: 12px 0;
