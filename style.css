@@ -60,6 +60,7 @@
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
+  z-index: 1;
 }
 .movie-card img {
   width: 280px;
