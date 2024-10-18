@@ -42,11 +42,6 @@
   flex-basis: calc(33.333% - 24px);
   margin-bottom: 16px;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 63.48%,
-    rgba(0, 0, 0, 0.9) 92.16%
-  );
 }
 .movie-card::after {
   content: "";
@@ -61,6 +56,13 @@
     rgba(0, 0, 0, 0.9) 92.16%
   );
   z-index: 1;
+}
+.movie-info,
+.movie-description {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .movie-card img {
   width: 280px;
