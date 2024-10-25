@@ -139,7 +139,7 @@ function loadMoreMovies() {
     document.getElementById("load more").style.display = "none";
   }
 }
-document.getElementById("see-all").addEventListener("click", function () {
+document.getElementById("load more").addEventListener("click", function () {
   // Pobierz element, w którym mają być wyświetlane filmy (pod Upcoming This Month)
   const moviesContainer = document.getElementById("movies-list");
 
