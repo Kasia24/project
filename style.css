@@ -117,6 +117,7 @@
   justify-content: space-between;
   gap: 16px;
   display: block;
+  flex: 1 1 30%;
 }
 
 @media (min-width: 768px) {
