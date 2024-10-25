@@ -42,6 +42,7 @@
   flex-basis: calc(33.333% - 24px);
   margin-bottom: 16px;
   position: relative;
+  cursor: pointer;
 }
 .movie-card::after {
   content: "";
@@ -117,7 +118,7 @@
   justify-content: space-between;
   gap: 16px;
   display: block;
-  flex: 1 1 30%;
+  overflow-x: scroll;
 }
 
 @media (min-width: 768px) {
