@@ -129,17 +129,17 @@ function loadMoreMovies() {
         <h3>${movie.title}</h3>
         <p>${movie.year}</p>
       `;
-      movieList.insertBefore(movieCard, document.getElementById("load more")); // Wstaw przed przyciskiem
+      movieList.insertBefore(movieCard, document.getElementById("load-more")); // Wstaw przed przyciskiem
     });
 
     // Zaznacz, że załadowano filmy, aby zapobiec wielokrotnemu ładowaniu
     moviesLoaded = true;
 
     // Możesz ukryć przycisk See All, jeśli nie chcesz go pokazywać po załadowaniu
-    document.getElementById("load more").style.display = "none";
+    document.getElementById("load-more").style.display = "none";
   }
 }
-document.getElementById("load more").addEventListener("click", function () {
+document.getElementById("load-more").addEventListener("click", function () {
   // Pobierz element, w którym mają być wyświetlane filmy (pod Upcoming This Month)
   const moviesContainer = document.getElementById("movies-list");
 
