@@ -167,60 +167,43 @@ document.getElementById("load-more").addEventListener("click", function () {
   displayMovies(moviesContainer);
 });
 
-// Pobranie elementów HTML
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("closeModalBtn");
+const moviePoster = document.getElementById("moviePoster");
+const movieTitle = document.getElementById("movieTitle");
+const movieRating = document.getElementById("movieRating");
+const moviePopularity = document.getElementById("moviePopularity");
+const movieDescription = document.getElementById("movieDescription");
 const toggleLibraryBtn = document.getElementById("toggleLibraryBtn");
 const watchTrailerBtn = document.getElementById("watchTrailerBtn");
 const trailerContainer = document.getElementById("trailerContainer");
 
-// Dodaj event listener do każdej karty
-document.querySelectorAll("movie-card").forEach((card) => {
-  card.addEventListener("click", function (event) {
-    event.preventDefault(); // Zapobiega przeładowaniu strony
+let currentMovie = null;
 
-    // Pobieranie szczegółów filmu z atrybutów data
-    const title = this.dataset.title;
-    const rating = this.dataset.rating;
-    const popularity = this.dataset.popularity;
-    const description = this.dataset.description;
-    const poster = this.dataset.poster;
+// Funkcja do wyświetlania modala
+function showModal(movie) {
+  currentMovie = movie;
+  moviePoster.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  movieTitle.innerText = movie.title;
+  movieRating.innerText = `Rating: ${movie.vote_average.toFixed(1)}`;
+  moviePopularity.innerText = `Popularity: ${movie.popularity.toFixed(1)}`;
+  movieDescription.innerText = movie.overview;
 
-    // Ustawianie zawartości modalu
-    document.getElementById("movieTitle").innerText = title;
-    document.getElementById("movieRating").innerText = `Rating: ${rating}`;
-    document.getElementById(
-      "moviePopularity"
-    ).innerText = `Popularity: ${popularity}`;
-    document.getElementById("movieDescription").innerText = description;
-    document.getElementById("moviePoster").src = poster;
+  updateLibraryButton();
+  modal.classList.remove("hidden");
 
-    // Wyświetlanie modalu
-    modal.classList.remove("hidden");
-  });
-});
+  document.addEventListener("keydown", handleEscKeyPress);
+}
 
-// Obsługa zamknięcia modalu
-closeModalBtn.addEventListener("click", function () {
+// Funkcja do zamykania modala
+function closeModal() {
   modal.classList.add("hidden");
   trailerContainer.classList.add("hidden");
-  trailerContainer.innerHTML = ""; // Usuwa zawartość trailera po zamknięciu
-});
+  trailerContainer.innerHTML = ""; // Usuń trailer z kontenera
+  document.removeEventListener("keydown", handleEscKeyPress);
+}
 
-// Obsługa dodania filmu do biblioteki
-toggleLibraryBtn.addEventListener("click", function () {
-  // Przykładowe działanie: wyświetlenie alertu
-  alert("Film dodany do biblioteki!");
-  // Możesz dodać tutaj dodatkową logikę, np. przechowywanie danych w localStorage
-});
-
-// Obsługa wyświetlania trailera
-watchTrailerBtn.addEventListener("click", function () {
-  trailerContainer.classList.toggle("hidden");
-  if (!trailerContainer.classList.contains("hidden")) {
-    trailerContainer.innerHTML =
-      '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
-  } else {
-    trailerContainer.innerHTML = ""; // Usuwa zawartość trailera po zamknięciu
-  }
-});
+// Funkcja obsługująca naciśnięcie klawisza ESC
+function handleEscKeyPress(event) {
+  if (event.key === "Escape") closeModal();
+}
