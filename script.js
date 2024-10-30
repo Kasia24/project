@@ -53,12 +53,29 @@ function getGenreNames(genreIds) {
     .join(", ");
 }
 
-function getStars(vote) {
+/*function getStars(vote) {
   const fullStars = Math.floor(vote / 2);
   let stars = "";
   for (let i = 0; i < 5; i++) {
     if (i < fullStars) {
       stars += "&#9733;"; // Pełna gwiazdka
+    } else {
+      stars += "&#9734;"; // Pusta gwiazdka
+    }
+  }
+  return stars;
+}*/
+
+function getStars(vote) {
+  const fullStars = Math.floor(vote / 2); // Liczba pełnych gwiazdek
+  const halfStar = vote % 2 >= 1; // Sprawdzenie, czy jest połowa gwiazdki
+  let stars = "";
+
+  for (let i = 0; i < 5; i++) {
+    if (i < fullStars) {
+      stars += "&#9733;"; // Pełna gwiazdka
+    } else if (i === fullStars && halfStar) {
+      stars += "&#9733;"; // Połowa gwiazdki
     } else {
       stars += "&#9734;"; // Pusta gwiazdka
     }
