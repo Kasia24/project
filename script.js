@@ -1,9 +1,5 @@
 const API_KEY = "2fd9551be199200f928abc93ae4bceb1"; // Wstaw swój API key tutaj
 
-import { getGenres } from "./api";
-import { getPopularMoviesWeek } from "./api";
-import { showModal } from "./modal_1";
-
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
 let moviesList = []; // Lista przechowująca pobrane filmy
